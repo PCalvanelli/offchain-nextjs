@@ -1,0 +1,12 @@
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 4rem 0;
+  }
+
+  .feature {
+    flex: 1 1 300px;
+    margin: 1rem;
+  }

@@ -1,0 +1,89 @@
+.nav {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #1e2124;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .logoText {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 0.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .linkWrapper {
+    position: relative;
+  }
+
+  .link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .link svg {
+    margin-left: 0.5rem;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    min-width: 12rem;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-10px);
+  }
+
+  .dropdownLink {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .linkWrapper:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+  }
