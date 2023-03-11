@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '@/styles/Card.module.css';
 
 function Card({ icon, title, bulletPoints }) {
   return (
-    <div className="card">
-      <div className="icon">{icon}</div>
-      <h3>{title}</h3>
-      <ul>
-        {bulletPoints.map((bullet, index) => (
-          <li key={index}>{bullet}</li>
-        ))}
-      </ul>
+    <div className={styles.card}>
+      <div className={styles.cardBody}>
+        <div className={styles.cardIcon}>{icon}</div>
+        <div>
+          <h3>{title}</h3>
+          <ul>
+            {bulletPoints.map((bullet, index) => (
+              <li key={index}>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

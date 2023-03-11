@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Hero.module.css';
 import { FiDownloadCloud } from 'react-icons/fi';
+import WaitlistModal from './WaitlistModal';
 
 const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleJoinWaitlistClick = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className={styles.hero}>
       <img className={styles.logo} src="/hippo_logo-removebg-preview.png" alt="Off Chain Logo" />
@@ -17,10 +28,9 @@ const Hero = () => {
         <Link legacyBehavior href="/documentation">
           <a className={styles.button}>Documentation</a>
         </Link>
-        <Link legacyBehavior href="/waitlist">
-          <a className={styles.button}>Join API Waitlist</a>
-        </Link>
+        <button className={styles.button} onClick={handleJoinWaitlistClick}>Join API Waitlist</button>
       </div>
+      {showModal && <WaitlistModal onClose={handleModalClose} />}
     </div>
   );
 };

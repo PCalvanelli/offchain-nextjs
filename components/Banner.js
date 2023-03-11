@@ -17,7 +17,7 @@ const Banner = () => {
           <div className={styles.bannerContainer}>
           <FaDiscord className={styles.discordIcon}/>
           <p>Join the Off Chain Discord Server!</p>
-          <Link legacyBehavior href="/about">
+          <Link legacyBehavior href="https://discord.gg/pgRtSSncmh">
           <a className={styles.button}>Join now<FaArrowRight className={styles.buttonIcon}/></a>
           </Link>
           </div>
