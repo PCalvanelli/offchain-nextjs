@@ -37,6 +37,9 @@ const NavBar = () => {
               <Link legacyBehavior href="/tutorials">
                 <a className={styles.dropdownLink}>Tutorials</a>
               </Link>
+              <Link legacyBehavior href="/changelog">
+                <a className={styles.dropdownLink}>Data Changelog</a>
+              </Link>
             </div>
           )}
         </div>
