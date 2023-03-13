@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import styles from '@/styles/WaitlistModal.module.css';
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://zgjfvxglyiydrytbhuwc.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnamZ2eGdseWl5ZHJ5dGJodXdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg0NzcyMTAsImV4cCI6MTk5NDA1MzIxMH0.WGZHEZGAA8YQ2oJikbmanrhJtScfZCNdUNQh0DzdRKU'
+
+const supabase = createClient(supabaseUrl, supabaseKey)
+
 
 const WaitlistModal = ({ onClose }) => {
   const [email, setEmail] = useState('');
@@ -14,7 +21,10 @@ const WaitlistModal = ({ onClose }) => {
       return;
     }
     try {
-      // make API call to submit form data here
+      const { data, error } = await supabase.from('Waitlist').insert({ email });
+      if (error) {
+        throw new Error(error.message);
+      }
       console.log(`Submitting email ${email} to API`);
       setSuccess(true);
     } catch (error) {
@@ -22,6 +32,7 @@ const WaitlistModal = ({ onClose }) => {
       setFormError(true);
     }
   };
+
 
   const handleChange = (event) => {
     setEmail(event.target.value);
