@@ -12,30 +12,30 @@ const Features = () => {
     <section className={styles.features}>
       <div className={styles.featuresWrapper}>
         <Card
-          title="Fast Transactions"
+          title="Longitudinal Data"
           icon={<IoIosSpeedometer />}
           bulletPoints={[
-            'High performance distributed system',
-            'Low-latency data delivery',
-            'Supports 10,000+ transactions per second'
+            'Conduct longitudinal analysis of digital asset adoption',
+            'Track changes in adoption over time',
+            'Identify trends and patterns'
           ]}
         />
         <Card
-          title="Secure Data"
+          title="Machine Learning"
           icon={<AiOutlineSecurityScan />}
           bulletPoints={[
-            'End-to-end encryption',
-            'Private key management',
-            'Auditing and compliance'
+            'Train algorithms and models on the latest data to make more accurate predictions',
+            'Identify new opportunities',
+            'Reduce risk'
           ]}
         />
         <Card
-          title="Data Visualization"
+          title="Large and Growing"
           icon={<BsGraphUp />}
           bulletPoints={[
-            'Customizable dashboards',
-            'Real-time data updates',
-            'Interactive charts and graphs'
+            'Largest and fastest growing dataset',
+            'Over 200 unique data points',
+            'Over 5,000 unique respondents'
           ]}
         />
         <Card
@@ -48,7 +48,7 @@ const Features = () => {
           ]}
         />
         <Card
-          title="Decentralization"
+          title="Community Engagement"
           icon={<FaCheckCircle />}
           bulletPoints={[
             'Fully decentralized architecture',
