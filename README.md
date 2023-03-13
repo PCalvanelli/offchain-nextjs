@@ -18,13 +18,13 @@ The survey used to collect the data was designed to capture data on everything f
 
 The questions were designed to capture the following information:
 
- -Demographics (age, gender, income, education, etc.)
- -Political affiliation and voting behavior
- -Home ownership status
- -Awareness and understanding of digital assets
- -Ownership and use of digital assets
- -Sentiment towards digital assets
- -Factors influencing adoption of digital assets
+- Demographics (age, gender, income, education, etc.)
+- Political affiliation and voting behavior
+- Home ownership status
+- Awareness and understanding of digital assets
+- Ownership and use of digital assets
+- Sentiment towards digital assets
+- Factors influencing adoption of digital assets
 
 ## Data Collection
 
@@ -36,11 +36,11 @@ The data collected through the survey was analyzed to provide sentiment and qual
 
 The data analysis includes the following:
 
--Geographic concentration of digital asset adoption
--Demographic breakdown of digital asset adoption
--Political affiliation and voting behavior of digital asset adopters
--Sentiment towards digital assets
--Factors influencing adoption of digital assets
+- Geographic concentration of digital asset adoption
+- Demographic breakdown of digital asset adoption
+- Political affiliation and voting behavior of digital asset adopters
+- Sentiment towards digital assets
+- Factors influencing adoption of digital assets
 
 ## API Access
 
