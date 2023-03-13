@@ -1,4 +1,8 @@
-# README.md
+# Off Chain Data
+
+![Off Chain Data logo](./public/hippo_logo.png)
+
+## Digital Asset Adoption in the United States
 
 This product provides sentiment and qualitative data on digital asset adoption across the United States. The data is easily accessible to anyone who can use an API and knows basic data analysis and statistics.
 
