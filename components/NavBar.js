@@ -28,17 +28,14 @@ const NavBar = () => {
           </a>
           {isDropdownOpen && (
             <div className={styles.dropdown}>
-              <Link legacyBehavior href="/getting-started">
+              <Link legacyBehavior href="https://peter-calvanelli.gitbook.io/off-chain-data/getting-started">
                 <a className={styles.dropdownLink}>Getting Started</a>
               </Link>
-              <Link legacyBehavior href="/api-reference">
+              <Link legacyBehavior href="https://peter-calvanelli.gitbook.io/off-chain-data/getting-started/api-reference">
                 <a className={styles.dropdownLink}>API Reference</a>
               </Link>
-              <Link legacyBehavior href="/tutorials">
+              <Link legacyBehavior href="https://peter-calvanelli.gitbook.io/off-chain-data/getting-started/tutorial">
                 <a className={styles.dropdownLink}>Tutorials</a>
-              </Link>
-              <Link legacyBehavior href="/changelog">
-                <a className={styles.dropdownLink}>Data Changelog</a>
               </Link>
             </div>
           )}
