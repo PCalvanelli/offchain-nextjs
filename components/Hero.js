@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Hero.module.css';
 import { FiDownloadCloud } from 'react-icons/fi';
+import WaitlistModal from '@/components/WaitlistModal';
 
 const Hero = () => {
   const [showModal, setShowModal] = useState(false);
