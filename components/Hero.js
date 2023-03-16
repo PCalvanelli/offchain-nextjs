@@ -19,7 +19,7 @@ const Hero = () => {
     <div className={styles.hero}>
       <img className={styles.logo} src="/hippo_logo-removebg-preview.png" alt="Off Chain Logo" />
       <p className={styles.description}>
-      Off Chain Data is a platform that collects and shares qualitative data related to the adoption of digital assets.
+      Off Chain Data is a platform that collects and shares qualitative data on digital asset adoption.
       </p>
       <div className={styles.buttons}>
         <Link legacyBehavior href="/hippo_logo-removebg-preview.png" download>

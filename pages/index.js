@@ -11,7 +11,7 @@ export default function Documentation() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Off Chain Data Documentation</title>
+        <title>Off Chain Data</title>
         <meta name="description" content="Off Chain Data Documentation" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

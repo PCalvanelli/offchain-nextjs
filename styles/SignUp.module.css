@@ -1,0 +1,105 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: #222;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .signUpForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .formGroup {
+    margin-bottom: 20px;
+  }
+
+  .formField {
+    height: 40px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+    width: 100%;
+  }
+
+    .formField:focus {
+        border-color: #a9a9a9;
+    }
+
+.formField:hover {
+    border-color: #a9a9a9;
+  }
+
+  .formFieldError {
+    border-color: #ff3860;
+  }
+
+  .errorMessage {
+    color: #ff3860;
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .submitButton {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .submitButton:hover {
+    background-color: #222;
+  }
+
+  .successMessage {
+    color: #28a745;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .formField::placeholder {
+    color: #a9a9a9;
+    font-size: 1rem;
+    font-weight: 100;
+  }
+
+  .formField:focus::placeholder {
+    color: transparent;
+  }

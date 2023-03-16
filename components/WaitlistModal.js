@@ -51,7 +51,7 @@ const WaitlistModal = ({ onClose }) => {
             <div className={styles.closeButton} onClick={onClose}>
               <FaTimes />
             </div>
-            <h2>Join Waitlist</h2>
+            <h2>Join the waitlist</h2>
             <p>Enter your email to join the waitlist for the Off Chain API.</p>
             <form onSubmit={handleSubmit}>
               <div className={styles.formGroup}>

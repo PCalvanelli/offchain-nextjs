@@ -87,3 +87,31 @@
     transform: translateY(0);
     transition: all 0.3s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      padding: 1rem;
+      justify-content: center;
+    }
+
+    .logo {
+      margin-bottom: 1rem;
+    }
+
+    .links {
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .link {
+      margin: 0 1rem;
+    }
+
+    .dropdown {
+      top: calc(100% - 0.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
