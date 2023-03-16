@@ -15,9 +15,9 @@ const Features = () => {
           title="Longitudinal Data"
           icon={<IoIosSpeedometer />}
           bulletPoints={[
-            'Conduct longitudinal analysis of digital asset adoption',
-            'Track changes in adoption over time',
-            'Identify trends and patterns'
+            'Conduct longitudinal analysis of digital asset adoption behavior',
+            'Track changes in adoption over time and space',
+            'Identify trends and patterns in adoption behavior'
           ]}
         />
         <Card
@@ -25,35 +25,35 @@ const Features = () => {
           icon={<AiOutlineSecurityScan />}
           bulletPoints={[
             'Train algorithms and models on the latest data to make more accurate predictions',
-            'Identify new opportunities',
-            'Reduce risk'
+            'Identify new opportunities through data-driven insights',
+            'Reduce risk and uncertainty in decision making models and algorithms'
           ]}
         />
         <Card
           title="Large and Growing"
           icon={<BsGraphUp />}
           bulletPoints={[
-            'Largest and fastest growing dataset',
+            'Largest and fastest growing dataset on digital asset adoption',
             'Over 200 unique data points',
-            'Over 5,000 unique respondents'
+            'Over 5,000 unique and randomly sampled respondents'
           ]}
         />
         <Card
           title="Interoperability"
           icon={<RiExchangeFundsLine />}
           bulletPoints={[
-            'Connect to other blockchain networks',
-            'Cross-chain asset exchange',
-            'Seamless integration with existing systems'
+            'Cross-platform compatibility',
+            'Wide-ranging app integration',
+            'RESTful architecture'
           ]}
         />
         <Card
           title="Community Engagement"
           icon={<FaCheckCircle />}
           bulletPoints={[
-            'Fully decentralized architecture',
-            'Resilient to attacks',
-            'Redundant data storage and retrieval'
+            'Community driven data collection and analysis',
+            'Community driven survey design and development',
+            'Community driven data visualization'
           ]}
         />
       </div>
