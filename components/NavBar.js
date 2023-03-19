@@ -40,9 +40,6 @@ const NavBar = () => {
             </div>
           )}
         </div>
-        <Link legacyBehavior href="/blog">
-          <a className={styles.link}>Blog</a>
-        </Link>
         <Link legacyBehavior href="https://github.com/PCalvanelli/offchain-nextjs/issues">
           <a className={styles.link}>Contributing</a>
         </Link>

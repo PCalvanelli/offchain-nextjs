@@ -17,7 +17,7 @@
 .logo {
   width: 100px;
   margin-bottom: 2rem;
-  background-color: #222;
+  background-color: #1c2331;
   border-radius: 50%;
 }
 
@@ -82,8 +82,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #222;
-  color: #fff;
+  background-color: #fff;
+  color: #222;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 0.75rem 1rem;
@@ -97,12 +97,11 @@
 }
 
   .downloadButton:hover {
-    color: gold;
+    color: #ff7f50;
   }
 
   .button:hover {
-    background-color: gold;
-    color: #222;
+    color: #ff7f50;
   }
 
   .icon {
