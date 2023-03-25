@@ -1,10 +1,5 @@
 import React from 'react';
-import Card from './Card';
-import { FaCheckCircle } from 'react-icons/fa';
-import { IoIosSpeedometer } from 'react-icons/io';
-import { AiOutlineSecurityScan } from 'react-icons/ai';
-import { BsGraphUp } from 'react-icons/bs';
-import { RiExchangeFundsLine } from 'react-icons/ri';
+import Card from '@/components/Card';
 import styles from '@/styles/Features.module.css';
 
 const Features = () => {
@@ -13,7 +8,6 @@ const Features = () => {
       <div className={styles.featuresWrapper}>
         <Card
           title="Longitudinal Data"
-          icon={<IoIosSpeedometer />}
           bulletPoints={[
             'Conduct longitudinal analysis of digital asset adoption behavior',
             'Track changes in adoption over time and space',
@@ -22,7 +16,6 @@ const Features = () => {
         />
         <Card
           title="Machine Learning"
-          icon={<AiOutlineSecurityScan />}
           bulletPoints={[
             'Train algorithms and models on the latest data to make more accurate predictions',
             'Identify new opportunities through data-driven insights',
@@ -31,7 +24,6 @@ const Features = () => {
         />
         <Card
           title="Large and Growing"
-          icon={<BsGraphUp />}
           bulletPoints={[
             'Largest and fastest growing dataset on digital asset adoption',
             'Over 200 unique data points',
@@ -40,7 +32,6 @@ const Features = () => {
         />
         <Card
           title="Interoperability"
-          icon={<RiExchangeFundsLine />}
           bulletPoints={[
             'Cross-platform compatibility',
             'Wide-ranging app integration',
@@ -49,7 +40,6 @@ const Features = () => {
         />
         <Card
           title="Community Engagement"
-          icon={<FaCheckCircle />}
           bulletPoints={[
             'Community driven data collection and analysis',
             'Community driven survey design and development',

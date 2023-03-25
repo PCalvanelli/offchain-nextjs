@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import styles from 'styles/SignUp.module.css';
 import { createClient } from '@supabase/supabase-js';
+import { useRouter } from 'next/router';
+import NavBar from '@/components/NavBar';
 
 const supabaseUrl = 'https://zgjfvxglyiydrytbhuwc.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnamZ2eGdseWl5ZHJ5dGJodXdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg0NzcyMTAsImV4cCI6MTk5NDA1MzIxMH0.WGZHEZGAA8YQ2oJikbmanrhJtScfZCNdUNQh0DzdRKU';
@@ -22,41 +24,45 @@ function SignUp() {
   const [submitted, setSubmitted] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const router = useRouter();
 
-    const { email, password } = formData;
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-        const { user } = await supabase.auth.signUp({
-          email,
-          password,
+  const { email, password } = formData;
+
+  try {
+      const { user } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+
+      if (user) {
+        setSuccessMessage('Thanks for signing up!');
+        setFormData({
+          email: '',
+          password: '',
         });
-
-        if (user) {
-          setSuccessMessage('Thanks for signing up!');
-          setFormData({
-            email: '',
-            password: '',
-          });
-          setSubmitted(true);
-        }
-      } catch (error) {
-        console.log(error);
-
-        if (error.code === '23505') {
-          setFormErrors({
-            email: 'This email is already registered.',
-            password: '',
-          });
-        } else {
-          setFormErrors({
-            email: '',
-            password: 'Something went wrong. Please try again later.',
-          });
-        }
+        setSubmitted(true);
+        router.push('/success'); // Redirect to the Success page
       }
-    };
+    } catch (error) {
+      console.log(error);
+
+      if (error.code === '23505') {
+        setFormErrors({
+          email: 'This email is already registered.',
+          password: '',
+        });
+      } else {
+        setFormErrors({
+          email: '',
+          password: 'Something went wrong. Please try again later.',
+        });
+      }
+    }
+};
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,6 +79,8 @@ function SignUp() {
   };
 
   return (
+    <div>
+    < NavBar />
     <div className={styles.container}>
       <div className={styles.card}>
         <img className ={styles.logo} src='/hippo_logo-removebg-preview.png' alt='Off Chain Data' />
@@ -115,6 +123,7 @@ function SignUp() {
             </button>
         </form>
         </div>
+    </div>
     </div>
     );
 }

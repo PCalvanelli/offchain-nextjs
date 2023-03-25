@@ -13,17 +13,17 @@ const Footer = () => {
           <div className={styles.column}>
             <h3>Resources</h3>
             <ul>
-              <li><Link legacyBehavior href="/docs"><a>Documentation</a></Link></li>
-              <li><Link legacyBehavior href="/faq"><a>FAQ</a></Link></li>
+              <li><Link legacyBehavior href="https://peter-calvanelli.gitbook.io/off-chain-data/"><a>Documentation</a></Link></li>
+              <li><Link legacyBehavior href="https://peter-calvanelli.gitbook.io/off-chain-data/faqs"><a>FAQ</a></Link></li>
               <li><Link legacyBehavior href="/blog"><a>Blog</a></Link></li>
             </ul>
           </div>
           <div className={styles.column}>
             <h3>Contact Us</h3>
             <ul>
-              <li><a href="mailto:info@offchaindata.io">info@offchaindata.io</a></li>
-              <li><a href="https://twitter.com/offchaindata">Twitter</a></li>
-              <li><a href="https://github.com/offchaindata">GitHub</a></li>
+              <li><a href="mailto:admin@offchaindata.io">support@offchaindata.io</a></li>
+              <li><a href="https://twitter.com/offchaindataapi">Twitter</a></li>
+              <li><a href="https://github.com/PCalvanelli/offchain-nextjs">GitHub</a></li>
             </ul>
           </div>
         </div>

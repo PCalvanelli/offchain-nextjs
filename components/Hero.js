@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Hero.module.css';
 import { FiDownloadCloud } from 'react-icons/fi';
-import WaitlistModal from '@/components/WaitlistModal';
 
 const Hero = () => {
-  const [showModal, setShowModal] = useState(false);
-
   const handleDownloadClick = async () => {
     const url = 'https://zgjfvxglyiydrytbhuwc.supabase.co/storage/v1/object/public/public/sample/demo-survey-sept-22.csv';
     const response = await fetch(url);
@@ -19,31 +16,20 @@ const Hero = () => {
     link.remove();
   };
 
-
-  const handleJoinWaitlistClick = () => {
-    setShowModal(true);
-  };
-
-  const handleModalClose = () => {
-    setShowModal(false);
-  };
-
   return (
     <div className={styles.hero}>
       <img className={styles.logo} src="/hippo_logo-removebg-preview.png" alt="Off Chain Logo" />
       <p className={styles.description}>
-        Off Chain Data is a platform that collects and shares qualitative data on digital asset adoption.
+        <span className={styles.brandName}>Off Chain Data</span> is a platform that collects and shares qualitative data on digital asset adoption.
       </p>
       <div className={styles.buttons}>
         <button className={styles.downloadButton} onClick={handleDownloadClick}>
           Download Sample Data <FiDownloadCloud className={styles.icon} />
         </button>
-        <Link legacyBehavior href="https://peter-calvanelli.gitbook.io/off-chain-data/">
-          <a className={styles.button}>Documentation</a>
+        <Link legacyBehavior href="/signup">
+          <a className={styles.button}>Join API Waitlist</a>
         </Link>
-        <button className={styles.button} onClick={handleJoinWaitlistClick}>Join API Waitlist</button>
       </div>
-      {showModal && <WaitlistModal onClose={handleModalClose} />}
     </div>
   );
 };

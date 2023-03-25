@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '@/styles/Documentation.module.css'
+import styles from '@/styles/Home.module.css'
 import AlertBanner from '@/components/Banner';
 import NavBar from '@/components/NavBar';
 import Hero from '@/components/Hero';
