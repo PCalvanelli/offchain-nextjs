@@ -53,6 +53,32 @@
     position: relative;
   }
 
+  .login {
+    color: #f3f3f3;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .logout {
+    color: #f3f3f3;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
   @media (max-width: 768px) {
     .nav {
       flex-direction: column;

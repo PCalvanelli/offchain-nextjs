@@ -17,15 +17,13 @@ const NavBar = () => {
         <a className={styles.link} href="https://peter-calvanelli.gitbook.io/off-chain-data/getting-started">
           Documentation
         </a>
-        <Link legacyBehavior href="https://github.com/PCalvanelli/offchain-nextjs/issues">
-          <a className={styles.link}>Contributing</a>
-        </Link>
+
         {isAuthenticated ? (
-          <a className={styles.link} onClick={() => logout({ returnTo: window.location.origin })}>
+          <a className={styles.logout} onClick={() => logout({ returnTo: window.location.origin })}>
             Logout
           </a>
         ) : (
-          <a className={styles.link} onClick={() => loginWithRedirect()}>
+          <a className={styles.login} onClick={() => loginWithRedirect()}>
             Log In
           </a>
         )}
@@ -35,4 +33,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-

@@ -6,7 +6,6 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Footer from '@/components/Footer';
 import { Auth0Provider } from '@auth0/auth0-react';
-import LoginButton from '@/components/LoginButton';
 
 function Documentation({ children }) {
   return (
