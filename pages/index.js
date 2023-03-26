@@ -19,7 +19,14 @@ function Documentation({ children }) {
           <title>Off Chain Data</title>
           <meta name="description" content="Off Chain Data is a qualitative data repository for digital asset adoption." />
           <link rel="icon" href="/favicon.ico" />
+          <script src="https://app.posthog.com/static/array.js"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `posthog.init('phc_RqBHjrPnyqns302EaQdSiK3Oc6P2hwJxiKc55e7UhPs',{api_host:'https://app.posthog.com'});`
+            }}
+          />
         </Head>
+
         <NavBar />
         <AlertBanner />
         <Hero />
