@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.0.1",
     "@supabase/supabase-js": "^2.10.0",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",

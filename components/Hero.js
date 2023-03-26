@@ -2,8 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Hero.module.css';
 import { FiDownloadCloud } from 'react-icons/fi';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Hero = () => {
+  const { loginWithRedirect } = useAuth0();
   const handleDownloadClick = async () => {
     const url = 'https://zgjfvxglyiydrytbhuwc.supabase.co/storage/v1/object/public/public/sample/demo-survey-sept-22.csv';
     const response = await fetch(url);
@@ -26,9 +28,9 @@ const Hero = () => {
         <button className={styles.downloadButton} onClick={handleDownloadClick}>
           Download Sample Data <FiDownloadCloud className={styles.icon} />
         </button>
-        <Link legacyBehavior href="/signup">
-          <a className={styles.button}>Join API Waitlist</a>
-        </Link>
+        <a className={styles.button} onClick={() => loginWithRedirect()}>
+          Join the API Waitlist
+        </a>
       </div>
     </div>
   );

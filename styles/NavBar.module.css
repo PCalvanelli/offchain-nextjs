@@ -53,41 +53,6 @@
     position: relative;
   }
 
-  .link svg {
-    margin-left: 0.5rem;
-  }
-
-  .dropdown {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    left: 0;
-    background-color: #f3f3f3;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    min-width: 12rem;
-    z-index: 2;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-    transform: translateY(-10px);
-  }
-
-  .dropdownLink {
-    color: #000;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-  }
-
-  .linkWrapper:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: all 0.3s ease-in-out;
-  }
-
   @media (max-width: 768px) {
     .nav {
       flex-direction: column;
@@ -99,18 +64,7 @@
       margin-bottom: 1rem;
     }
 
-    .links {
-      margin-top: 1rem;
-      justify-content: center;
-    }
-
     .link {
       margin: 0 1rem;
-    }
-
-    .dropdown {
-      top: calc(100% - 0.5rem);
-      left: 50%;
-      transform: translateX(-50%);
     }
   }

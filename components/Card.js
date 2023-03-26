@@ -21,10 +21,8 @@ function Card({ icon, title, bulletPoints }) {
 }
 
 Card.propTypes = {
-  icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   bulletPoints: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Card;
-
