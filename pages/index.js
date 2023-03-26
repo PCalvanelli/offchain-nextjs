@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 import styles from '@/styles/Home.module.css'
 import AlertBanner from '@/components/Banner';
 import NavBar from '@/components/NavBar';
@@ -19,13 +20,13 @@ function Documentation({ children }) {
           <title>Off Chain Data</title>
           <meta name="description" content="Off Chain Data is a qualitative data repository for digital asset adoption." />
           <link rel="icon" href="/favicon.ico" />
-          <script src="https://app.posthog.com/static/array.js"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `posthog.init('phc_RqBHjrPnyqns302EaQdSiK3Oc6P2hwJxiKc55e7UhPs',{api_host:'https://app.posthog.com'});`
-            }}
-          />
         </Head>
+
+        <Script src="https://app.posthog.com/static/array.js" strategy="beforeInteractive" />
+
+        <Script strategy="beforeInteractive" dangerouslySetInnerHTML={{
+              __html: `posthog.init('phc_RqBHjrPnyqns302EaQdSiK3Oc6P2hwJxiKc55e7UhPs',{api_host:'https://app.posthog.com'});`
+            }}/>
 
         <NavBar />
         <AlertBanner />
@@ -39,3 +40,4 @@ function Documentation({ children }) {
 }
 
 export default Documentation;
+
