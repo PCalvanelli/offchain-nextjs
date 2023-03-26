@@ -4,6 +4,7 @@ import { createClient } from '@supabase/supabase-js';
 import NavBar from '@/components/NavBar';
 import styles from '@/styles/SignUp.module.css';
 
+
 const supabaseUrl = 'https://zgjfvxglyiydrytbhuwc.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnamZ2eGdseWl5ZHJ5dGJodXdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg0NzcyMTAsImV4cCI6MTk5NDA1MzIxMH0.WGZHEZGAA8YQ2oJikbmanrhJtScfZCNdUNQh0DzdRKU'
 
