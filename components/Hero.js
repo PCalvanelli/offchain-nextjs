@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from '@/styles/Hero.module.css';
 import { FiDownloadCloud } from 'react-icons/fi';
 import { useAuth0 } from "@auth0/auth0-react";
+import posthog from 'posthog-js';
 
 const Hero = () => {
   const { loginWithRedirect } = useAuth0();
@@ -16,7 +17,14 @@ const Hero = () => {
     document.body.appendChild(link);
     link.click();
     link.remove();
+    posthog.capture('Sample Data Downloaded');
   };
+
+  const handleJoinApiWaitlistClick = () => {
+    posthog.capture('join_api_waitlist_clicked');
+    loginWithRedirect();
+  };
+
 
   return (
     <div className={styles.hero}>
@@ -28,7 +36,7 @@ const Hero = () => {
         <button className={styles.downloadButton} onClick={handleDownloadClick}>
           Download Sample Data <FiDownloadCloud className={styles.icon} />
         </button>
-        <a className={styles.button} onClick={() => loginWithRedirect()}>
+        <a className={styles.button} onClick={handleJoinApiWaitlistClick}>
           Join the API Waitlist
         </a>
       </div>
