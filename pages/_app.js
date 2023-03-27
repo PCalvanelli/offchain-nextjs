@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [])
+  }, [router.events]) // Add `router.events` to the dependency array
 
   return (
     <PostHogProvider client={posthog}>
@@ -38,3 +38,4 @@ export default function App({ Component, pageProps }) {
     </PostHogProvider>
   )
 }
+
