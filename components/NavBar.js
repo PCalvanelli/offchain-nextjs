@@ -14,7 +14,7 @@ const NavBar = () => {
         </a>
       </Link>
       <div className={styles.links}>
-        <a className={styles.link} href="https://peter-calvanelli.gitbook.io/off-chain-data/getting-started">
+        <a className={styles.link} href="https://peter-calvanelli.gitbook.io/off-chain-data/">
           Documentation
         </a>
 
