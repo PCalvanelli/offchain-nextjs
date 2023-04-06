@@ -1,46 +1,67 @@
 import React from 'react';
-import Link from 'next/link';
-import styles from '@/styles/Hero.module.css';
-import { FiDownloadCloud } from 'react-icons/fi';
+import { Button, ButtonGroup, Container, Grid, Icon } from 'semantic-ui-react';
 import { useAuth0 } from "@auth0/auth0-react";
-import posthog from 'posthog-js';
+import Terminal from '@/components/Terminal';
 
 const Hero = () => {
-  const { loginWithRedirect } = useAuth0();
-  const handleDownloadClick = async () => {
-    const url = 'https://zgjfvxglyiydrytbhuwc.supabase.co/storage/v1/object/public/public/sample/demo-survey-sept-22.csv';
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const downloadUrl = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    posthog.capture('Sample Data Downloaded');
-  };
+  const { isAuthenticated, getAccessTokenSilently, loginWithRedirect } = useAuth0();
+  const [csvUrl, setCsvUrl] = React.useState('');
 
-  const handleJoinApiWaitlistClick = () => {
-    posthog.capture('join_api_waitlist_clicked');
-    loginWithRedirect();
-  };
+  React.useEffect(() => {
+    const fetchCsvUrl = async () => {
+      if (isAuthenticated) {
+        try {
+          const accessToken = await getAccessTokenSilently();
+          const response = await fetch('https://zgjfvxglyiydrytbhuwc.supabase.co/storage/v1/object/public/public/sample/demo-survey-sept-22.csv', {
+            headers: {
+              Authorization: `Bearer ${accessToken}`
+            }
+          });
+          if (response.ok) {
+            const data = await response.json();
+            setCsvUrl(data.url);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
 
+    fetchCsvUrl();
+  }, [isAuthenticated, getAccessTokenSilently]);
 
   return (
-    <div className={styles.hero}>
-      <img className={styles.logo} src="/hippo_logo-removebg-preview.png" alt="Off Chain Logo" />
-      <p className={styles.description}>
-        <span className={styles.brandName}>Off Chain Data</span> is a platform that collects and shares qualitative data on digital asset adoption.
-      </p>
-      <div className={styles.buttons}>
-        <button className={styles.downloadButton} onClick={handleDownloadClick}>
-          Download Sample Data <FiDownloadCloud className={styles.icon} />
-        </button>
-        <a className={styles.button} onClick={handleJoinApiWaitlistClick}>
-          Join the API Waitlist
-        </a>
-      </div>
-    </div>
+    <Container>
+      <Grid stackable columns={2}>
+        <Grid.Row>
+          <Grid.Column mobile={16} tablet={16} computer={8} largeScreen={8} widescreen={8}>
+            <h1>Qualitative data,</h1>
+            <h1>user-friendly API,</h1>
+            <h1>
+              <span className="ui black">
+                improve your models
+              </span>
+            </h1>
+            <p>
+              Gain powerful insights with proprietary data previously used by research teams at investment firms and universities.
+              Get knowledge fast and flexibly. Unlock the full potential of your large language model.
+            </p>
+            <ButtonGroup attached={false}>
+              <Button basic primary size='large' onClick={() => loginWithRedirect({ screen_hint: "signup" })}>
+                Get Started<Icon name='right chevron' />
+              </Button>
+              {csvUrl && (
+                <Button basic as='a' href={csvUrl} download size='large' className='secondary' style={{ marginLeft: '10px', borderRadius: '5px' }}>Download Sample Data<Icon name='right chevron' /></Button>
+              )}
+              <Button basic as='a' href='https://peter-calvanelli.gitbook.io/off-chain-data/' size='large' style={{ marginLeft: '10px', borderRadius: '5px' }}>Read Docs<Icon name='right chevron' /></Button>
+            </ButtonGroup>
+          </Grid.Column>
+          <Grid.Column mobile={16} tablet={16} computer={6} largeScreen={6} widescreen={6}>
+            <Terminal />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Container>
   );
 };
 
