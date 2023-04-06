@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
+import { FaTwitter, FaGithub, FaDiscord } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -35,8 +36,24 @@ const Footer = () => {
               <Header inverted as='h4' content='Contact Us' />
               <List link inverted>
                 <List.Item><span style={{ cursor: 'pointer' }}>support@offchaindata.xyz</span></List.Item>
-                <List.Item><span style={{ cursor: 'pointer' }}>Twitter</span></List.Item>
-                <List.Item><span style={{ cursor: 'pointer' }}>GitHub</span></List.Item>
+                <List.Item>
+                  <a href="https://twitter.com/offchaindata" target="_blank" rel="noopener noreferrer">
+                    <FaTwitter size={20} style={{ marginRight: 10 }} />
+                    <span style={{ cursor: 'pointer' }}>Twitter</span>
+                  </a>
+                </List.Item>
+                <List.Item>
+                  <a href="https://github.com/offchaindata" target="_blank" rel="noopener noreferrer">
+                    <FaGithub size={20} style={{ marginRight: 10 }} />
+                    <span style={{ cursor: 'pointer' }}>GitHub</span>
+                  </a>
+                </List.Item>
+                <List.Item>
+                  <a href="https://discord.gg/offchaindata" target="_blank" rel="noopener noreferrer">
+                    <FaDiscord size={20} style={{ marginRight: 10 }} />
+                    <span style={{ cursor: 'pointer' }}>Discord</span>
+                  </a>
+                </List.Item>
               </List>
             </Grid.Column>
           </Grid.Row>
@@ -50,3 +67,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
