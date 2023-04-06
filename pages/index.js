@@ -6,16 +6,8 @@ import Features from '@/components/Features';
 import Footer from '@/components/Footer';
 import SampleDataAcquisition from '@/components/SampleDataAcquisition';
 import { Auth0Provider } from '@auth0/auth0-react';
-import posthog from 'posthog-js';
-import { PostHogProvider } from 'posthog-js/react';
 import styles from '@/styles/Home.module.css';
 
-posthog.init(
-  process.env.REACT_APP_PUBLIC_POSTHOG_KEY,
-  {
-    api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
-  }
-);
 
 function Documentation({ children }) {
   return (
@@ -23,9 +15,9 @@ function Documentation({ children }) {
       domain="dev-nq6ou7gel7kp42hk.us.auth0.com"
       clientId="cliNQg6koEUz10BykOXKlEcnVv97jCDc"
       redirectUri={typeof window !== 'undefined' && window.location.origin}
+      screen_hint="signup"
     >
       <div className={styles.container}>
-        <PostHogProvider client={posthog}>
           <Head>
             <title>Off Chain Data | Discover the adoption of digital assets</title>
             <meta name="description" content="Off Chain Data is a qualitative data repository for digital asset adoption." />
@@ -48,7 +40,6 @@ function Documentation({ children }) {
             </Grid.Row>
           </Grid>
           <Footer className={styles.footer} />
-        </PostHogProvider>
       </div>
     </Auth0Provider>
   );

@@ -47,7 +47,7 @@ const Hero = () => {
               Get knowledge fast and flexibly. Unlock the full potential of your large language model.
             </p>
             <ButtonGroup attached={false}>
-              <Button basic primary size='large' onClick={() => loginWithRedirect({ screen_hint: "signup" })}>
+              <Button basic primary size='large' onClick={() => loginWithRedirect({ screen_hint: 'signup' , initialScreen: 'signUp' })} style={{ borderRadius: '5px' }}>
                 Get Started<Icon name='right chevron' />
               </Button>
               {csvUrl && (
