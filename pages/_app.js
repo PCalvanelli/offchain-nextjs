@@ -1,12 +1,11 @@
-import '@/styles/globals.css'
+
 // pages/_app.js
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { Analytics } from '@vercel/analytics/react';
-
 import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
-
 import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Check that PostHog is client-side (used to handle Next.js SSR)
@@ -42,4 +41,3 @@ export default function App({ Component, pageProps }) {
     </PostHogProvider>
   )
 }
-
