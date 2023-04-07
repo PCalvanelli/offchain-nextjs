@@ -1,11 +1,11 @@
 // This component will be responsible to: Render a fallback UI after an error is thrown
-import React from "react";
-import styles from "@/styles/ErrorBoundary.module.css";
+import React from 'react';
+import styles from '@/styles/ErrorBoundary.module.css';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: true };
+    this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(error) {
@@ -23,7 +23,7 @@ class ErrorBoundary extends React.Component {
           <h2>Whoops, there was an error loading this page!</h2>
           <div className={styles.buttons}>
             <button
-              type="button"
+              type='button'
               className={styles.button}
               onClick={() => this.setState({ hasError: false })}
             >
