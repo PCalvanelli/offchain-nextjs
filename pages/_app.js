@@ -7,6 +7,8 @@ import { Analytics } from '@vercel/analytics/react';
 import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 
+import ErrorBoundary from '@/components/ErrorBoundary';
+
 // Check that PostHog is client-side (used to handle Next.js SSR)
 if (typeof window !== 'undefined') {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
@@ -33,7 +35,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <PostHogProvider client={posthog}>
-      <Component {...pageProps} />
+      <ErrorBoundary>
+        <Component {...pageProps} />
+      </ErrorBoundary>
       <Analytics />
     </PostHogProvider>
   )
